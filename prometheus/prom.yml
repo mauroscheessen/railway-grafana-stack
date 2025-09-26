@@ -2,10 +2,11 @@ global:
   scrape_interval: 15s # Default scrape interval
 
 scrape_configs:
-  - job_name: 'prometheus'
-    scheme: https
+  - job_name: "mi-servicio"
+    metrics_path: /latam/metrics.ashx   # aquí va el path
     static_configs:
-      - targets: ['webtesting.essen.com.ar:743/latam/metrics.ashx']
+      - targets: ["webtesting.essen.com.ar:743"]   # aquí solo host:puerto
+
 
   # - job_name: 'example_api'
   #   scheme: http
